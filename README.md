@@ -1,7 +1,7 @@
 JFR Maven Extension
 ===================
 
-This Maven extension generates JFR Events for a Maven build.
+This Maven extension generates JFR events for a Maven build.
 
 Usage
 -----
