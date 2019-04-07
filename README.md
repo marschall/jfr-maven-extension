@@ -22,4 +22,4 @@ Usage
 Screenshot
 ----------
 
-<img src="https://github.com/marschall/jfr-maven-extension/raw/master/src/main/javadoc/jfr-maven-extension.png" width="1331" height="561" alt="Sample Screenshot"/>
+<img src="https://github.com/marschall/jfr-maven-extension/raw/master/src/main/javadoc/jfr-maven-extension.png" width="665" height="280" alt="Sample Screenshot"/>
