@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.marschall.unit</groupId>
+  <artifactId>project-to-test</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Test JFR Maven Extension</name>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>com.github.marschall</groupId>
+        <artifactId>jfr-maven-extension</artifactId>
+        <version>${it-plugin.version}</version>
+      </extension>
+    </extensions>
+  </build>
+</project>
