@@ -3,7 +3,7 @@
 
   <groupId>com.github.marschall</groupId>
   <artifactId>jfr-maven-extension</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <inceptionYear>2019</inceptionYear>
   <url>https://github.com/marschall/jfr-maven-extension/</url>
   <packaging>jar</packaging>
@@ -49,7 +49,7 @@
     <connection>scm:git:https://github.com/marschall/jfr-maven-extension.git</connection>
     <developerConnection>scm:git:git@github.com:marschall/jfr-maven-extension.git</developerConnection>
     <url>${project.url}</url>
-    <tag>HEAD</tag>
+    <tag>0.1.0</tag>
   </scm>
 
   <dependencies>
