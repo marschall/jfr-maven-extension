@@ -91,10 +91,6 @@
       <name>Nexus Release Repository</name>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
-    <site>
-      <id>gh-pages</id>
-      <url>${project.scm.developerConnection}</url>
-    </site>
   </distributionManagement>
 
   <build>
