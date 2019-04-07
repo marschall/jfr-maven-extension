@@ -18,3 +18,8 @@ Usage
   </extensions>
 </build>
 ```
+
+Screenshot
+----------
+
+<img src="https://github.com/marschall/jfr-maven-extension/raw/master/src/main/javadoc/jfr-maven-extension.png" width="1331" height="561" alt="Sample Screenshot"/>
