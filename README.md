@@ -1,4 +1,4 @@
-JFR Maven Extension
+JFR Maven Extension [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/jfr-maven-extension/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/jfr-maven-extension)
 ===================
 
 This Maven extension generates JFR events for a Maven build.
