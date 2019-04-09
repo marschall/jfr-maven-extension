@@ -116,6 +116,7 @@ final class JfrEventListener extends AbstractExecutionListener {
     mojoEvent.setPhase(mojoExecution.getLifecyclePhase());
     mojoEvent.setGroupId(mojoExecution.getPlugin().getGroupId());
     mojoEvent.setArtifactId(mojoExecution.getPlugin().getArtifactId());
+    mojoEvent.setVersion(mojoExecution.getPlugin().getVersion());
     mojoEvent.setExecutionId(mojoExecution.getExecutionId());
     return mojoEvent;
   }
@@ -171,16 +172,32 @@ final class JfrEventListener extends AbstractExecutionListener {
   @StackTrace(false)
   static final class MojoEvent extends Event {
 
+    @Label("forked")
+    @Description("Whether the Mojo execution was forked")
     private boolean forked;
 
+    @Label("goal")
+    @Description("The goal of the Mojo which was executed")
     private String goal;
 
+    @Label("phase")
+    @Description("The phase in which the Mojo was executed")
     private String phase;
 
+    @Label("groupId")
+    @Description("The groupId of the executed Mojo")
     private String groupId;
 
+    @Label("artifactId")
+    @Description("The artifactId of the executed Mojo")
     private String artifactId;
 
+    @Label("version")
+    @Description("The version of the executed Mojo")
+    private String version;
+
+    @Label("executionId")
+    @Description("The id of the Mojo execution")
     private String executionId;
 
     boolean isForked() {
@@ -221,6 +238,14 @@ final class JfrEventListener extends AbstractExecutionListener {
 
     void setArtifactId(String artifactId) {
       this.artifactId = artifactId;
+    }
+
+    String getVersion() {
+      return this.version;
+    }
+
+    void setVersion(String version) {
+      this.version = version;
     }
 
     String getExecutionId() {
