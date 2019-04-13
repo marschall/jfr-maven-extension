@@ -8,9 +8,6 @@ import org.apache.maven.execution.ExecutionEvent;
 import org.apache.maven.plugin.MojoExecution;
 import org.apache.maven.project.MavenProject;
 
-import com.github.marschall.maven.jfr.JfrEventListener.MojoEvent;
-import com.github.marschall.maven.jfr.JfrEventListener.ProjectEvent;
-
 import jdk.jfr.Category;
 import jdk.jfr.Description;
 import jdk.jfr.Event;
