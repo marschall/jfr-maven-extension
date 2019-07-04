@@ -7,20 +7,23 @@ import org.apache.maven.execution.MavenExecutionRequest;
 import org.apache.maven.execution.MavenSession;
 import org.codehaus.plexus.component.annotations.Component;
 
+/**
+ * An extension that generates Flight Recorder events.
+ */
 @Component(role = AbstractMavenLifecycleParticipant.class, hint = "jfrevents")
 public class JfrEventsExtension extends AbstractMavenLifecycleParticipant {
 
   @Override
   public void afterProjectsRead(MavenSession session) throws MavenExecutionException {
-    MavenExecutionRequest request = session.getRequest();
+    MavenExecutionRequest mavenExecutionRequest = session.getRequest();
 
-    ExecutionListener originalListener = request.getExecutionListener();
+    ExecutionListener originalListener = mavenExecutionRequest.getExecutionListener();
     var jfrEventListener = new JfrEventListener();
     if (originalListener != null) {
       var compositeExecutionListener = new CompositeExecutionListener(jfrEventListener, originalListener);
-      request.setExecutionListener(compositeExecutionListener);
+      mavenExecutionRequest.setExecutionListener(compositeExecutionListener);
     } else {
-      request.setExecutionListener(jfrEventListener);
+      mavenExecutionRequest.setExecutionListener(jfrEventListener);
     }
 
   }
