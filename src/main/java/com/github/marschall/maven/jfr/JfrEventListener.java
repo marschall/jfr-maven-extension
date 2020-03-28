@@ -8,9 +8,6 @@ import org.apache.maven.execution.ExecutionEvent;
 import org.apache.maven.plugin.MojoExecution;
 import org.apache.maven.project.MavenProject;
 
-import com.github.marschall.maven.jfr.JfrEventListener.MojoEvent;
-import com.github.marschall.maven.jfr.JfrEventListener.ProjectEvent;
-
 import jdk.jfr.Category;
 import jdk.jfr.Description;
 import jdk.jfr.Event;
@@ -88,7 +85,7 @@ final class JfrEventListener extends AbstractExecutionListener {
   public void mojoFailed(ExecutionEvent event) {
     this.stopMojo(event.getMojoExecution());
   }
-  
+
   @Override
   public void forkStarted(ExecutionEvent event) {
     var mojoExecution = event.getMojoExecution();
@@ -99,12 +96,12 @@ final class JfrEventListener extends AbstractExecutionListener {
 
     mojoEvent.begin();
   }
-  
+
   @Override
   public void forkedProjectSucceeded(ExecutionEvent event) {
     this.stopMojo(event.getMojoExecution());
   }
-  
+
   @Override
   public void forkFailed(ExecutionEvent event) {
     this.stopMojo(event.getMojoExecution());
@@ -201,7 +198,7 @@ final class JfrEventListener extends AbstractExecutionListener {
     private String executionId;
 
     boolean isForked() {
-      return forked;
+      return this.forked;
     }
 
     void setForked(boolean forked) {
@@ -225,7 +222,7 @@ final class JfrEventListener extends AbstractExecutionListener {
     }
 
     String getGroupId() {
-      return groupId;
+      return this.groupId;
     }
 
     void setGroupId(String groupId) {
