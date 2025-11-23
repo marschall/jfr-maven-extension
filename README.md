@@ -13,7 +13,7 @@ Usage
     <extension>
       <groupId>com.github.marschall</groupId>
       <artifactId>jfr-maven-extension</artifactId>
-      <version>0.1.1</version>
+      <version>0.2.0</version>
     </extension>
   </extensions>
 </build>
