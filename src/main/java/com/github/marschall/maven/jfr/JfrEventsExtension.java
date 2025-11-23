@@ -1,16 +1,19 @@
 package com.github.marschall.maven.jfr;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.apache.maven.AbstractMavenLifecycleParticipant;
 import org.apache.maven.MavenExecutionException;
 import org.apache.maven.execution.ExecutionListener;
 import org.apache.maven.execution.MavenExecutionRequest;
 import org.apache.maven.execution.MavenSession;
-import org.codehaus.plexus.component.annotations.Component;
 
 /**
  * An extension that generates Flight Recorder events.
  */
-@Component(role = AbstractMavenLifecycleParticipant.class, hint = "jfrevents")
+@Named("jfrevents")
+@Singleton
 public class JfrEventsExtension extends AbstractMavenLifecycleParticipant {
 
   @Override

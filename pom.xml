@@ -3,7 +3,7 @@
 
   <groupId>com.github.marschall</groupId>
   <artifactId>jfr-maven-extension</artifactId>
-  <version>0.1.2-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
   <inceptionYear>2019</inceptionYear>
   <url>https://github.com/marschall/jfr-maven-extension/</url>
 
@@ -60,6 +60,17 @@
       <scope>provided</scope>
     </dependency>
 
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>io.takari.maven.plugins</groupId>
       <artifactId>takari-plugin-integration-testing</artifactId>
@@ -74,6 +85,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.12.2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <distributionManagement>
     <snapshotRepository>
@@ -108,13 +131,14 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.plexus</groupId>
-        <artifactId>plexus-component-metadata</artifactId>
+        <groupId>org.eclipse.sisu</groupId>
+        <artifactId>sisu-maven-plugin</artifactId>
         <executions>
           <execution>
+            <id>index-project</id>
             <goals>
-              <goal>generate-metadata</goal>
-              <goal>generate-test-metadata</goal>
+              <goal>main-index</goal>
+              <goal>test-index</goal>
             </goals>
           </execution>
         </executions>
@@ -225,9 +249,9 @@
           <version>3.3.0</version>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.plexus</groupId>
-          <artifactId>plexus-component-metadata</artifactId>
-          <version>2.2.0</version>
+          <groupId>org.eclipse.sisu</groupId>
+          <artifactId>sisu-maven-plugin</artifactId>
+          <version>0.9.0.M3</version>
         </plugin>
         <plugin>
           <groupId>io.takari.maven.plugins</groupId>

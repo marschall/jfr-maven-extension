@@ -2,33 +2,31 @@ package com.github.marschall.maven.jfr;
 
 import java.io.File;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
-import io.takari.maven.testing.TestResources;
+import io.takari.maven.testing.TestResources5;
 import io.takari.maven.testing.executor.MavenExecution;
 import io.takari.maven.testing.executor.MavenExecutionResult;
 import io.takari.maven.testing.executor.MavenRuntime;
 import io.takari.maven.testing.executor.MavenRuntime.MavenRuntimeBuilder;
 import io.takari.maven.testing.executor.MavenVersions;
-import io.takari.maven.testing.executor.junit.MavenJUnitTestRunner;
+import io.takari.maven.testing.executor.junit.MavenPluginTest;
 
-@RunWith(MavenJUnitTestRunner.class)
+
 @MavenVersions("3.9.11")
-public class JfrEventsExtensionTest {
+class JfrEventsExtensionTest {
 
-  @Rule
-  public final TestResources resources = new TestResources();
+  @RegisterExtension
+  final TestResources5 resources = new TestResources5();
 
   private final MavenRuntime mavenRuntime;
 
-  public JfrEventsExtensionTest(MavenRuntimeBuilder builder) throws Exception {
+  JfrEventsExtensionTest(MavenRuntimeBuilder builder) throws Exception {
     this.mavenRuntime = builder.build();
   }
 
-  @Test
-  public void testBasic() throws Exception {
+  @MavenPluginTest
+  void testBasic() throws Exception {
     File basedir = this.resources.getBasedir("project-to-test");
     MavenExecution execution = this.mavenRuntime.forProject(basedir);
 
