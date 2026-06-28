@@ -36,8 +36,8 @@
   </issueManagement>
 
   <ciManagement>
-    <system>Travis CI</system>
-    <url>https://travis-ci.org/marschall/jfr-maven-extension</url>
+    <system>GitHub Actions</system>
+    <url>https://github.com/marschall/spring-batch-inmemory/actions</url>
   </ciManagement>
 
   <scm>

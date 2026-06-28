@@ -1,4 +1,4 @@
-JFR Maven Extension [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/jfr-maven-extension/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.marschall/jfr-maven-extension)
+JFR Maven Extension  [![Build Status](https://github.com/marschall/jfr-maven-extension/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/marschall/jfr-maven-extension/actions?query=branch%3Amaster) [![Maven Central](https://img.shields.io/maven-central/v/com.github.marschall/jfr-maven-extension?color=31c653&label=maven%20central)](https://central.sonatype.com/artifact/com.github.marschall/jfr-maven-extension) [![Javadocs](https://www.javadoc.io/badge/com.github.marschall/jfr-maven-extension.svg)](https://www.javadoc.io/doc/com.github.marschall/jfr-maven-extension)
 ===================
 
 This Maven extension generates JFR events for a Maven build.
