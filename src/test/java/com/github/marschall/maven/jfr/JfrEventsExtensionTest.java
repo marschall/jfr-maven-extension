@@ -13,7 +13,7 @@ import io.takari.maven.testing.executor.MavenVersions;
 import io.takari.maven.testing.executor.junit.MavenPluginTest;
 
 
-@MavenVersions("3.9.11")
+@MavenVersions("3.9.16")
 class JfrEventsExtensionTest {
 
   @RegisterExtension
